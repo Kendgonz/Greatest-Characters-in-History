@@ -1,0 +1,262 @@
+html {
+  box-sizing: border-box;
+  font-size: 60%;
+}
+
+body {
+  justify-content: center;
+  align-items: center;
+  width: 98vw;
+  background-color: #091f36;
+  color: white;
+}
+a {
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-flow: row;
+  width: 100%;
+  margin: 20px 0 80px;
+  margin-top: 100px;
+}
+
+.card {
+  width: 400px;
+  margin: 20px;
+  background-color: white;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.card:hover {
+  .card__caption {
+    top: 70%;
+    transform: translateY(-50%);
+  }
+
+  .card__image {
+    transform: translateY(-10px);
+  }
+
+  .card__thumb {
+    &::after {
+      top: 0;
+    }
+  }
+}
+
+.card__thumb {
+  position: relative;
+  max-height: 400px;
+  overflow: hidden;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    display: block;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transition: 0.3s;
+  }
+}
+
+.card__image {
+  transition: 0.5s ease-in-out;
+  height: auto;
+}
+
+.card__caption {
+  position: absolute;
+  top: 80%;
+  z-index: 1;
+  padding: 0 20px;
+  color: white;
+  transform: translateY(-50%);
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card__title {
+  display: -webkit-box;
+  max-height: 85px;
+  text-align: start;
+  overflow: hidden;
+  font-size: 23px;
+  line-height: 28px;
+  text-shadow: 0px 1px 5px black;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card__button {
+  display: inline-block;
+  padding: 10px 20px;
+  color: white;
+  border: 1px solid white;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.main_container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.main_container h2 {
+  font-size: 30px;
+  margin-bottom: 70px;
+}
+
+.main_container .data {
+  display: flex;
+  flex-direction: column;
+  margin-top: 90px;
+}
+
+.main_container p {
+  font-weight: lighter;
+  font-size: 25px;
+}
+
+#imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px;
+}
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foot {
+  display: flex;
+}
+.gallery a {
+  font-size: xx-large;
+}
+
+/*
+Footer Styles
+*/
+
+.footer {
+  background: #000;
+  padding: 30px 0px;
+  margin-top: 50px;
+  font-family: "Play", sans-serif;
+  text-align: center;
+}
+
+.footer .row {
+  width: 100%;
+  margin: 1% 0%;
+  padding: 0.6% 0%;
+  color: gray;
+  font-size: 1.5rem;
+}
+
+.footer .row a {
+  text-decoration: none;
+  color: gray;
+  transition: 0.5s;
+}
+
+.footer .row a:hover {
+  color: #fff;
+}
+
+.footer .row ul {
+  width: 100%;
+}
+
+.footer .row ul li {
+  display: inline-block;
+  margin: 0px 30px;
+}
+
+.footer .row a i {
+  font-size: 2em;
+  margin: 0% 1%;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    text-align: left;
+    padding: 5%;
+  }
+  .footer .row ul li {
+    display: block;
+    margin: 10px 0px;
+    text-align: left;
+  }
+  .footer .row a i {
+    margin: 0% 3%;
+  }
+}
+
+/*
+Gallery Styles
+*/
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-size: 30px;
+  font-family: sans-serif;
+  font-style: italic;
+}
+.box {
+  background-color: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 300px;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.5);
+  transform: translateX(400%);
+  transition: transform 0.5s;
+}
+
+.box img{
+  max-height: 95%;
+  max-width: 95%;
+}
+
+.box:nth-last-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
